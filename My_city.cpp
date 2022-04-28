@@ -1,23 +1,24 @@
+// hellooow
 #include "My_city.h"
-//Конструктори
+//ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г°ГЁ
 My_city::My_city() {}
 My_city::My_city(int square, int count_of_people, string oblast_name, string name) :My_place(square, count_of_people),
 oblast_name(oblast_name), name(name)
 {
 }
-//Гетери
+//ГѓГҐГІГҐГ°ГЁ
 string My_city::get_oblast_name(){ return this->oblast_name; }
 string My_city::get_name() { return this->name; }
 string My_city::get_body(){ return this->body; }
-//Сетери
+//Г‘ГҐГІГҐГ°ГЁ
 void My_city::set_oblast_name(string oblast_name) { this->oblast_name = oblast_name; }
 void My_city::set_name(string name) { this->name = name; }
-//Функція, що виводить дані об'єкта на екран
+//Г”ГіГ­ГЄГ¶ВіГї, Г№Г® ГўГЁГўГ®Г¤ГЁГІГј Г¤Г Г­Ві Г®ГЎ'ВєГЄГІГ  Г­Г  ГҐГЄГ°Г Г­
 void My_city::pprint(ostream& my_city)
 {
 	cout << "Square: " << get_square() << " People: " << get_count_of_people() << " Oblast name: " << get_oblast_name() << " City name: " << get_name() << endl;
 }
-//Перегруження операторів для потокового вводу та виводу з консолі
+//ГЏГҐГ°ГҐГЈГ°ГіГ¦ГҐГ­Г­Гї Г®ГЇГҐГ°Г ГІГ®Г°ВіГў Г¤Г«Гї ГЇГ®ГІГ®ГЄГ®ГўГ®ГЈГ® ГўГўГ®Г¤Гі ГІГ  ГўГЁГўГ®Г¤Гі Г§ ГЄГ®Г­Г±Г®Г«Ві
 ostream& operator<<(ostream& out, My_city& my_city) {
 	my_city.pprint(out);
 	return out;
@@ -51,5 +52,5 @@ istream& operator >> (istream& in, My_city& my_city) {
 		}
 	}
 }
-//Деструктор
+//Г„ГҐГ±ГІГ°ГіГЄГІГ®Г°
 My_city::~My_city() {}
